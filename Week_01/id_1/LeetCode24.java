@@ -5,7 +5,6 @@ class Solution {
 
     public ListNode swapPairs(ListNode head) {
 
-
         if (head == null) {
             return null;
         }
@@ -18,7 +17,6 @@ class Solution {
         
         ListNode node = head;
         ListNode next = head.next;
-
         while (node != null && next != null) {
 
             node = swap(node, next);
@@ -27,7 +25,6 @@ class Solution {
                 break;
             }
             next = node.next;
-
         }
         return result;
 

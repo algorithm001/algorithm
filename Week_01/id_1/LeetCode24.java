@@ -1,4 +1,3 @@
-
 class Solution {
 
     ListNode prePairTail = null;

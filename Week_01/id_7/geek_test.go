@@ -27,3 +27,8 @@ func TestTwoSum(t *testing.T) {
 	nums := []int{3, 3}
 	t.Log(twoSum(nums, 6))
 }
+
+func TestSingleNumber(t *testing.T) {
+	nums := []int{3, 3, 1}
+	t.Log(singleNumber(nums))
+}

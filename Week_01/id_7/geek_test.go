@@ -22,3 +22,8 @@ func TestMergeList(t *testing.T) {
 	PrintList(l3)
 
 }
+
+func TestTwoSum(t *testing.T) {
+	nums := []int{3, 3}
+	t.Log(twoSum(nums, 6))
+}

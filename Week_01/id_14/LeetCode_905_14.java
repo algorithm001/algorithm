@@ -59,3 +59,16 @@ class Solution {
 		return a;
 	}
 }
+/**
+ * <pre>
+ * 交换时，未使用 low++,high--
+ * 执行用时 : 3 ms, 在Sort Array By Parity的Java提交中击败了99.80% 的用户
+ * 内存消耗 : 42.8 MB, 在Sort Array By Parity的Java提交中击败了81.17% 的用户
+ * </pre>
+ * <pre>
+ *     不使用，每次交换后，需要多进行2次比较
+ * 交换时，使用 low++,high--
+ * 执行用时 : 3 ms, 在Sort Array By Parity的Java提交中击败了99.80% 的用户
+ * 内存消耗 : 39.5 MB, 在Sort Array By Parity的Java提交中击败了93.62% 的用户
+ * </pre>
+ */

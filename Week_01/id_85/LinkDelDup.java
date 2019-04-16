@@ -7,7 +7,7 @@
  * @Version: 1.0.0
  * @Since: 1.8
  **/
-public class Solution {
+public class LinkDelDup {
 
 
     public ListNode deleteDuplicates(ListNode head) {
@@ -59,7 +59,7 @@ public class Solution {
              * 递归调用
              */
             deleteDuplicates2(head);
-        }else {
+        } else {
             /**
              * 当前节点与下一节点的值不相等，递归下一节点
              */
@@ -72,7 +72,7 @@ public class Solution {
     public static void main(String[] args) {
 
 
-        Integer[] arr = {1,1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5};
+        Integer[] arr = {1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5};
 
         //初始化一个无用节点。去除边界问题
         ListNode cur = new ListNode(-1);
@@ -86,7 +86,7 @@ public class Solution {
         /**
          * 循环去重
          */
-        ListNode resultNode = new Solution().deleteDuplicates(head.next);
+        ListNode resultNode = new LinkDelDup().deleteDuplicates(head.next);
         while (resultNode != null) {
             System.out.println(resultNode.val);
             resultNode = resultNode.next;
@@ -95,7 +95,7 @@ public class Solution {
         /**
          * 递归去重
          */
-        resultNode = new Solution().deleteDuplicates2(head.next);
+        resultNode = new LinkDelDup().deleteDuplicates2(head.next);
         while (resultNode != null) {
             System.out.println(resultNode.val);
             resultNode = resultNode.next;

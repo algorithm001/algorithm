@@ -1,3 +1,4 @@
+public class Solution {//链表第一题
     public static ListNode deleteDuplicates(ListNode head) {
         
         //首先判断空

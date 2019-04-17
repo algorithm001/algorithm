@@ -34,10 +34,8 @@
 - 中等：https://leetcode-cn.com/problems/wiggle-sort-ii/
 - 困难：https://leetcode-cn.com/problems/maximum-gap/
 
-二分查找
+## 二分查找
 
-简单：https://leetcode-cn.com/problems/arranging-coins/
-中等：https://leetcode-cn.com/problems/powx-n/
-困难：https://leetcode-cn.com/problems/dungeon-game/
-
-
+- 简单：https://leetcode-cn.com/problems/arranging-coins/
+- 中等：https://leetcode-cn.com/problems/powx-n/
+- 困难：https://leetcode-cn.com/problems/dungeon-game/

@@ -43,7 +43,7 @@ namespace leetcode.两两交换链表中的节点
         {
             if (head == null || head.next == null)
             {
-                return null;
+                return head;
             }
 
             var next = head.next;

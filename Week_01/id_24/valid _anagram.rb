@@ -20,3 +20,25 @@ def is_anagram(s, t)
 	return true if source_hash.empty?
 	return false
 end
+#解法二
+def is_anagram(s, t)
+	x = Array.new(26, 0) 
+	for i in 0..s.length-1 do
+		value = s[i].ord - 97
+                x[value] ? x[value] += 1 : x[value] = 0
+	end
+	for j in 0..t.length-1 do
+		value = t[j].ord - 97
+		return false if x[value] == 0
+                x[value] -= 1	
+	end
+	return true if x.sum == 0
+	return false
+end
+
+# 解法三
+def is_anagram(s, t)
+	s_sort = s.split("").sort
+    t_sort = t.split("").sort
+    s_sort == t_sort
+end

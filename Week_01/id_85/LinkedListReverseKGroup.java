@@ -76,51 +76,22 @@ public class LinkedListReverseKGroup {
         return result;
     }
 
-    public ListNode reverse(ListNode head, ListNode end) {
-
-
-        ListNode cursor = head;
-
-        ListNode first = head;
-        while (cursor.next != null) {
-
-            ListNode _next = cursor.next;
-            cursor.next = _next.next;
-            _next.next = first;
-            first = _next;
-            if (cursor.next == end) {
-                break;
-            }
-        }
-
-        return first;
-    }
 
 
     public static void main(String[] args) {
         Integer[] arr = {1, 2, 3, 4, 5, 6, 7};
-        Integer[] arr1 = {0, 1};
 
         //初始化一个无用结点。去除边界问题
         ListNode cur = new ListNode(-1);
         ListNode head = cur;
 
-        ListNode puase = null;
-        int t = 0;
         for (Integer i : arr) {
             cur.next = new ListNode(i);
             cur = cur.next;
-//            t++;
-//            if (t == 4) {
-//                puase = cur;
-//
-//            }
         }
 
+        int k = 2;
 
-        int k = 1;
-
-//        ListNode resultNode = new LinkedListReverseKGroup().reverse(head.next,puase);
         ListNode resultNode = new LinkedListReverseKGroup().reverseKGroup(head.next, k);
         while (resultNode != null) {
             System.out.println(resultNode.val);

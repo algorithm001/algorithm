@@ -1,9 +1,6 @@
 
 
-	/**
-     *  执行用时 : 4 ms, 在Remove Duplicates from Sorted List的Java提交中击败了5.37% 的用户
-        内存消耗 : 34.5 MB, 在Remove Duplicates from Sorted List的Java提交中击败了99.90% 的用户
-     */
+
     public ListNode deleteDuplicates(ListNode head) {
 
         if (head == null){

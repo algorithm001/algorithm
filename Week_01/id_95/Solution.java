@@ -1,4 +1,3 @@
-public class Solution {
     public static ListNode deleteDuplicates(ListNode head) {
         
         //首先判断空

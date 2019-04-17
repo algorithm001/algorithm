@@ -51,14 +51,5 @@ namespace leetcode.两两交换链表中的节点
             next.next = head;
             return next;
         }
-
-        public void Printf(ListNode ListNode)
-        {
-            while (ListNode != null)
-            {
-                Console.WriteLine(ListNode.val);
-                ListNode = ListNode.next;
-            }
-        }
     }
 }

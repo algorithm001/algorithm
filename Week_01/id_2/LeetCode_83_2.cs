@@ -41,7 +41,7 @@ namespace leetcode
             return head;
         }
 
-        public ListNode DeleteDuplicates_1(ListNode head)
+        public ListNode DeleteDuplicates_recursive(ListNode head)
         {
             if (head == null)
             {

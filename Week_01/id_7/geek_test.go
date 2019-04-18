@@ -32,3 +32,9 @@ func TestSingleNumber(t *testing.T) {
 	nums := []int{3, 3, 1}
 	t.Log(singleNumber(nums))
 }
+
+func TestValidParenthesses(t *testing.T) {
+	t.Log("===========")
+	t.Log(isValid("()"))
+	t.Log(isValid("(]"))
+}

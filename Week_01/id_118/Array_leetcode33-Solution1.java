@@ -3,7 +3,7 @@
  */
 class Solution {
     public int search(int[] nums, int target) {
-        // 这个逻辑，简直要疯了，等我捋捋的
+        // 递归实现好麻烦，也可能是我没整理清楚？仍然有优化空间？这个逻辑，简直要疯了，等我捋捋的
         
         if(nums.length<1){
             return -1;
@@ -26,7 +26,6 @@ class Solution {
 
         // 只有一个元素
         if(left==right){
-            System.out.println("测试，只有一个节点:"+nums[left]);
             return nums[left]==target?left:-1;
         }
         

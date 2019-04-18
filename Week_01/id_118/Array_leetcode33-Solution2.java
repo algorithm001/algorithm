@@ -20,7 +20,9 @@ class Solution {
             
             if(A[mid] == target){
                 return mid;
-            }else if(A[mid] < A[right]){
+            }
+            
+            if(A[mid] < A[right]){
                 if(target>A[mid] && target<=A[right]){
                     left=mid+1;
                 }

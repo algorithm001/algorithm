@@ -1,4 +1,5 @@
 class ValidString {
+class LeetCode_20_95 {
     public boolean isValid(String s) {
        //建立栈对象,用于char类型入栈
         Stack<Character> stack = new Stack<Character>();

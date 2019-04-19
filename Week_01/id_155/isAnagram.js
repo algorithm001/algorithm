@@ -37,3 +37,40 @@ var isAnagram = function(s, t) {
 
 
 
+
+
+
+
+
+/**
+ * 第二种方法
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+    if(s.length!=t.length) return false;
+let sarr={}, tarr={}
+for(let i in s){
+    if(sarr[s[i]] >=1){
+        sarr[s[i]]+=1
+    }else{
+        sarr[s[i]]=1
+    }
+}
+for(let i in t){
+    if(tarr[t[i]] >=1){
+        tarr[t[i]]+=1
+    }else{
+        tarr[t[i]]=1
+    }
+}
+for(let i in sarr){
+    if(sarr[i]!=tarr[i]) return false;
+}
+return true;
+
+};
+
+
+

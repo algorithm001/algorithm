@@ -19,8 +19,20 @@ func TestLeetCode_21_117(t *testing.T) {
 
 	newNode := mergeTwoLists(node01, node11)
 	temNode := newNode
+	rights := []int{1, 1, 1, 2, 3, 3}
+	news := []int{}
 	for temNode != nil {
-		t.Log(temNode.Val)
+		news = append(news, temNode.Val)
 		temNode = temNode.Next
 	}
+	if len(rights) != len(news) {
+		t.Fatalf("False")
+	}
+	for i := 0; i < len(rights); i++ {
+		if news[i] != rights[i] {
+			t.Fatalf("False")
+			break
+		}
+	}
+	t.Log("True")
 }

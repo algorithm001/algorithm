@@ -1,11 +1,10 @@
-```go
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
+package solution
+
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	res := &ListNode{}
 	cur := res
@@ -31,4 +30,3 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	}
 	return res.Next
 }
-```

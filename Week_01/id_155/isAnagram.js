@@ -20,6 +20,7 @@
  */
 
  /**
+  * 第一种方法
  * @param {string} s
  * @param {string} t
  * @return {boolean}
@@ -33,3 +34,6 @@ var isAnagram = function(s, t) {
     }
     return s==t? true:false; 
 };
+
+
+

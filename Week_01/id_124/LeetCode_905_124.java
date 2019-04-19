@@ -1,35 +1,49 @@
-import common.ListNode;
+public class SortArrayByParity {
 
-public class SwapPairs {
+    public int[] sortArrayByParity(int[] A) {
+        int length = A.length;
+        for (int i = 0, j = length - 1; i < j; ) {
+            if (A[i] % 2 != 0 && A[j] % 2 != 1) {
+                int temp = A[j];
+                A[j] = A[i];
+                A[i] = temp;
+                i++;
+                j--;
+            } else if (A[i] % 2 == 0) {
+                i++;
+            } else if (A[j] % 2 == 1) {
+                j--;
+            }
+        }
+        return A;
 
-    public ListNode swapPairs(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-        ListNode dummy  = new ListNode(-1);
-        dummy.next = head;
-        ListNode cur = dummy;
-        while (cur.next != null && cur.next.next != null) {
-            ListNode next = cur.next;
-            ListNode nextNext = cur.next.next;
-            next.next = nextNext.next;
-            nextNext.next = next;
-            cur.next = nextNext;
-            cur = nextNext.next;
-        }
-        return dummy.next;
     }
 
-    public static void main(String[] args) {
-        ListNode node1 = new ListNode(1);
-        ListNode node2 = new ListNode(2);
-        ListNode node3 = new ListNode(3);
-        ListNode node4 = new ListNode(4);
-        node1.next = node2;
-        node2.next = node3;
-        node3.next = node4;
-        SwapPairs swapPairs = new SwapPairs();
-        swapPairs.swapPairs(node1);
+    private boolean isOdd(int num) {
+        return num % 2 == 0;
     }
+
+    public int[] sortArrayByParityII(int[] A) {
+        int length = A.length;
+        if (length < 2) {
+            return A;
+        }
+        for (int i = 0, j = 1; i < length && j < length; ) {
+            if (isOdd(i) && isOdd(A[i])) {
+                i += 2;
+            }else if (!isOdd(j) && !isOdd(A[j])) {
+                j += 2;
+            }else {
+                int temp = A[j];
+                A[j] = A[i];
+                A[i] = temp;
+                i+=2;
+                j+=2;
+            }
+
+        }
+        return A;
+    }
+
 
 }

@@ -3,47 +3,43 @@ package com.imooc.activiti.helloworld;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Stack;
 
 /**
  * @author shironghui on 2019/4/18.
  */
 
 
-class Solution4 {
-    public static int[] sortArrayByParity2(int[] A) {
-        int length=A.length;
-        int[] B=new int[length/2];
-        int[] C=new int[length/2];
-        int[] D=new int[length];
-        int j=0;
-        int l=0;
-        int f=0;
-        int g=0;
-        for(int i=0;i<A.length;i++){
-            if(A[i]%2==0){
-                B[j]=A[i];
-                j++;
+class Solution6 {
+    //Hash table that takes care of the mappings
+    private HashMap<Character,Character> mappings;
+    //Initialize hash map with mappings.this simply makes the code easier to read.
+    public Solution6(){
+        this.mappings=new HashMap<Character,Character>();
+        this.mappings.put(')','(');
+        this.mappings.put('}','{');
+        this.mappings.put(']','[');
+    }
+    public boolean isValid(String s){
+        Stack<Character> stack=new Stack<>();
+        for(int i=0;i<s.length();i++){
+            char ch=s.charAt(i);
+            if(mappings.containsKey(ch)){
+                char popelement=stack.empty()?'#':stack.pop();
+                if(popelement!=mappings.get(ch)){
+                    return false;
+                }
             }
             else {
-                C[l]=A[i];
-                l++;
+                stack.push(ch);
             }
         }
-        for(int o=0;o<length;o++){
-            if(o%2==0){
-                D[o]=B[f];
-                f++;
-            }
-            else {
-                D[o]=C[g];
-                g++;
-            }
-        }
-        return D;
+        return stack.isEmpty();
     }
 }
 
-public class TestArray2 {
+public class TestStack2 {
     public static int[] stringToIntegerArray(String input) {
         input = input.trim();
         input = input.substring(1, input.length() - 1);

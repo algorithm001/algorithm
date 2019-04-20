@@ -5,7 +5,7 @@ import com.shufeng.algorithm.dto.ListNode;
 /**
  * @author gsf
  */
-public class D21 {
+public class LeetCode_21_30 {
 
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode node = new ListNode(0);

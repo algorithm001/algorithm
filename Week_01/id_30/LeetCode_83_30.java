@@ -5,7 +5,7 @@ import com.shufeng.algorithm.dto.ListNode;
 /**
  * @author gsf
  */
-public class D83 {
+public class LeetCode_83_30 {
     public static ListNode deleteDuplicates(ListNode head) {
         ListNode head1 = head;
         while (head1 != null) {

@@ -17,3 +17,6 @@ class Solution {
         return result
     }
 }
+
+// Runtime: 196 ms, faster than 99.24% of Swift online submissions for Sort Array By Parity II.
+// Memory Usage: 20 MB, less than 5.26% of Swift online submissions for Sort Array By Parity II.

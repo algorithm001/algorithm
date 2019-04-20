@@ -34,64 +34,48 @@ package com.geek.week01;
  * 2
  * 注意: 给定的二叉树不超过10000个结点。 树的高度不超过1000。
  */
-public class LongestUnivaluePath {
+public class LeetCode_687_036_LongestUnivaluePath {
     public int longestUnivaluePath(TreeNode root) {
-        if (root == null) {
+        int[] count = new int[1];
+        getLongestPathCount(root, count);
+        return count[0];
+    }
+
+    private int getLongestPathCount(TreeNode node, int[] longestPath) {
+        if (node == null) {
             return 0;
         }
 
-        if (root.left == null && root.right == null) {
-            return 0;
+        int leftCount = getLongestPathCount(node.left, longestPath);
+        int rightCount = getLongestPathCount(node.right, longestPath);
+
+        if (node.left != null && node.left.val == node.val) {
+            leftCount++;
+        } else {
+            leftCount = 0;
         }
 
-        int result = 0;
-        int leftCount = longestUnivaluePath(root.left);
-        int rightCount = longestUnivaluePath(root.right);
-
-        if (root.left != null && root.right != null) {
-            if (root.val == root.left.val && root.val == root.right.val) {
-                result = leftCount + rightCount + 2;
-            } else {
-                if (root.val == root.left.val) {
-                    leftCount++;
-                }
-                if (root.val == root.right.val) {
-                    rightCount++;
-                }
-                result = Math.max(leftCount, rightCount);
-            }
-        } else if (root.left != null || root.right != null) {
-            if (root.left != null && root.val == root.left.val) {
-                leftCount++;
-            }
-            if (root.right != null && root.val == root.right.val) {
-                rightCount++;
-            }
-            result = Math.max(leftCount, rightCount);
+        if (node.right != null && node.right.val == node.val) {
+            rightCount++;
+        } else {
+            rightCount = 0;
         }
 
-        return result;
-
-        /*
-        if (root.left != null && root.right != null) {
-            if (root.left.val == root.right.val) {
-                if (leftCount == rightCount) {
-                    result = leftCount + 2;
-                } else {
-                    result = Math.max(leftCount, rightCount);
-                }
-            } else {
-                result = Math.max(leftCount, rightCount);
-            }
-        } else if (root.left == null && root.right != null && root.val == root.right.val) {
-            result = Math.max(leftCount, rightCount + 1);
-        } else if (root.right == null && root.left != null && root.val == root.left.val) {
-            result = Math.max(leftCount + 1, rightCount);
+        int currentLongestPath;
+        if (node.left != null && node.right != null && node.left.val == node.right.val) {
+            /* 如果左右节点的值相同，那么可以相加连接起来。但如果左右相同但和本节点值不同，那么left和right的值都是0 */
+            currentLongestPath = leftCount + rightCount;
+        } else {
+            /* 否则，最大的路径值只能是左右路径的最大值 */
+            currentLongestPath = Math.max(leftCount, rightCount);
         }
-        */
 
-
-        //return result;
+        if (currentLongestPath > longestPath[0]) {
+            /* 最终返回的结果在这里，每次递归都是以当前节点为核心，计算最大路径值，在多次递归当中，仅保留最大的值 */
+            longestPath[0] = currentLongestPath;
+        }
+        /* 递归返回的是本节点与左右两个子节点的同值路径的最大值，注意，如果本节点的值与左右节点的值都不同，那么返回的是0 */
+        return Math.max(leftCount, rightCount);
     }
 }
 

@@ -1,5 +1,4 @@
 /**
- * https://leetcode-cn.com/problems/longest-univalue-path/
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
@@ -10,12 +9,12 @@
  */
 class Solution {
     
-    int result;
+    int ans;
     
     public int longestUnivaluePath(TreeNode root) {
-        result = 0;
+        ans = 0;
         longestUnivaluePathByRoot(root);
-        return result;
+        return ans;
     }
     
 
@@ -36,8 +35,8 @@ class Solution {
             arrowRight += right + 1;
         }
         
-        result = Math.max(result, arrowLeft + arrowRight);
-        return arrowLeft+arrowRight;
+        ans = Math.max(ans, arrowLeft + arrowRight);
+        return Math.max(arrowLeft, arrowRight);
     }
     
 }

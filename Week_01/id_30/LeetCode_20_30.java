@@ -1,7 +1,5 @@
 package com.shufeng.algorithm.d0_;
 
-import com.shufeng.algorithm.dto.ListNode;
-
 /**
  * @author gsf
  */

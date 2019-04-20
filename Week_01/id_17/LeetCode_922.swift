@@ -1,6 +1,5 @@
 class Solution {
     func sortArrayByParityII(_ A: [Int]) -> [Int] {
-        
         var result = A
         var evenIndex = 0
         var oddIndex = 1

@@ -1,5 +1,5 @@
 var sortArrayByParity = function(A) {
-    for (var i = 0, j = A.length - 1; i < j; i++, j--) {
+    for (var i=0, j=A.length-1; i<j; i++, j--) {
         while (A[i]%2 == 0) if (i>=j) break; else i++;
         while (A[j]%2 == 1) if (i>=j) break; else j--;
         [A[i], A[j]] = [A[j], A[i]];

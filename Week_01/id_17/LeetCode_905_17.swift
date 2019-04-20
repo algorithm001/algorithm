@@ -1,15 +1,8 @@
 class Solution {
 	func sortArrayByParity(_ A: [Int]) -> [Int] {
-		guard A.count >= 1, A.count <= 5000 else { return [Int]() }
 		var even = [Int]()
 		var odd = [Int]()
-		// A.forEach({ number in
-		// 	if number % 2 == 0 {
-		// 		even.append(number)
-		// 	} else {
-		// 		odd.append(number)
-		// 	}
-		// })
+
         for number in A {
             if number % 2 == 0 {
 				even.append(number)

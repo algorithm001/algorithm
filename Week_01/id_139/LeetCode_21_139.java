@@ -1,112 +1,57 @@
-2.0
-//先设置链表头
-//任一为空，直接连接另一条链表
-//执行用时 : 2 ms, 在Merge Two Sorted Lists的Java提交中击败了99.44% 的用户
-//内存消耗 : 35.3 MB, 在Merge Two Sorted Lists的Java提交中击败了90.56% 的用户
+1，申请额外空间
+
+
+//执行用时 : 3 ms, 在Sort Array By Parity的Java提交中击败了99.59% 的用户
+//内存消耗 : 46.5 MB, 在Sort Array By Parity的Java提交中击败了68.41% 的用户
+
 class Solution {
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode head = null;
-        ListNode p = null;
+    public int[] sortArrayByParity(int[] A) {
         
-        //if(l1 == null && l2 == null) return l1; 包含在下一句中
-        if(l1 == null) return l2;
-        if(l2 == null) return l1;
+        int j = A.length;
+        if (j<=1) return A;
+        int[] B = new int[j];
         
-        if(l1.val <= l2.val){
-            head = l1;
-            l1 = l1.next;
-            p = head;
-        }
-        else{
-            head = l2;
-            l2 = l2.next;
-            p = head;
-        }
+        int x=0;
+        int y=j-1;
         
-        while (l1 != null || l2 != null){
-            ListNode t;
-            if (l2 == null) {
-                p.next = l1;
-                break;
-            }
-            else if(l1 == null){
-                p.next = l2;
-                break;
+        for(int i=0; i<j; i++){   //注意是i<j，而不是i<=j
+            
+            if(A[i]%2 != 0){
+                B[y] = A[i];
+                y--;
             }
             else{
-                if(l1.val <= l2.val){
-                    t = l1;
-                    l1 = l1.next;
-                    p.next = t;
-                p = p.next; 
-                }
-                else{
-                    t = l2;
-                    l2 = l2.next; 
-                    p.next = t;
-                    p = p.next;
-                }
-            }
+                B[x] = A[i];
+                x++;
+            } 
         }
-        return head;
+        return B;
     }
 }
 
 
-1.0
-//先设置链表头
-//任一为空，后续不高效
-//执行用时 : 2 ms, 在Merge Two Sorted Lists的Java提交中击败了99.44% 的用户
-//内存消耗 : 34.8 MB, 在Merge Two Sorted Lists的Java提交中击败了95.63% 的用户
+
+2，不利用额外空间，前后指针，交换
 class Solution {
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode head = null;
-        ListNode p = null;
+    public int[] sortArrayByParity(int[] A) {
         
-        //if(l1 == null && l2 == null) return l1; 包含在下一句中
-        if(l1 == null) return l2;
-        if(l2 == null) return l1;
+        if(A == null || A.length == 1) return A;
+        int j = A.length - 1;
+        int i = 0;
         
-        if(l1.val <= l2.val){
-            head = l1;
-            l1 = l1.next;
-            p = head;
-        }
-        else{
-            head = l2;
-            l2 = l2.next;
-            p = head;
-        }
-        
-        while (l1 != null || l2 != null){   //注意是 ||，不是&&
-            ListNode t;
-            if (l2 == null) {
-                t = l1;
-                l1 = l1.next;
-                p.next = t;
-                p = p.next;
-            }
-            else if(l1 == null){
-                t = l2; 
-                l2 = l2.next;
-                p.next = t;
-                p = p.next;
+        while(i<=j){  //注意不是i！=j，比如数组长度为2，会导致越界
+            if(A[i]%2!=0 && A[j]%2==0){
+                int temp = A[i];
+                A[i] = A[j];
+                A[j] = temp;
+                i++;
+                j--;
             }
             else{
-                if(l1.val <= l2.val){
-                    t = l1;
-                    l1 = l1.next;
-                    p.next = t;
-                p = p.next; 
-                }
-                else{
-                    t = l2;
-                    l2 = l2.next; 
-                    p.next = t;
-                    p = p.next;
-                }
+                if(A[i]%2==0) i++;   
+                if(A[j]%2!=0) j--;
             }
         }
-        return head;
+        return A;
     }
 }

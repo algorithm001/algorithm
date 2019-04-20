@@ -1,8 +1,12 @@
 import java.util.Random;
 
+public class LeetCode_905_85 {
+
+}
+
 /**
  * @Package:
- * @ClassName: ArraySortByParity
+ * @ClassName: LeetCode_905_85.ArraySortByParity
  * @Description: 给定一个非负整数数组 A，返回一个由 A 的所有偶数元素组成的数组，后面跟 A 的所有奇数元素。 难度：简单
  * @leetcode url:https://leetcode.com/problems/sort-array-by-parity/
  * @Author: wangzhao
@@ -10,7 +14,7 @@ import java.util.Random;
  * @Version: 1.0.0
  * @Since: 1.8
  **/
-public class ArraySortByParity {
+class ArraySortByParity {
 
     public int[] sortArrayByParity(int[] A) {
 
@@ -56,19 +60,18 @@ public class ArraySortByParity {
         for (int i = 0; i < arr.length; i++) {
 
             int a = r.nextInt(100);
-            System.out.print(a+",");
+            System.out.print(a + ",");
 
             arr[i] = a;
         }
         System.out.println("");
         System.out.println("-----------我是分割线-------------");
-        int[] arr2={0,1,2,3};
+        int[] arr2 = {0, 1, 2, 3};
         int[] result = new ArraySortByParity().sortArrayByParity(arr2);
         for (int i : result) {
-            System.out.print(i+",");
+            System.out.print(i + ",");
         }
 
 
     }
 }
-//TODO: https://leetcode-cn.com/problems/sort-array-by-parity-ii/ 暂忽略

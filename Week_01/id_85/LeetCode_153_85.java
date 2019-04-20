@@ -1,3 +1,6 @@
+public class LeetCode_153_85 {
+}
+
 /**
  * @Package:
  * @ClassName: ArraySortedFindMin
@@ -12,7 +15,7 @@
  * @Version: 1.0.0
  * @Since: 1.8
  **/
-public class ArraySortedFindMin {
+class ArraySortedFindMin {
 
     public int findMin(int[] nums) {
 

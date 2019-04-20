@@ -1,6 +1,8 @@
+public class LeetCode_24_85 {
+}
 /**
  * @Package:
- * @ClassName: LinkedListSwapPairs
+ * @ClassName: LeetCode_24_85.LinkedListSwapPairs
  * @Description: 给定一个链表，两两交换其中相邻的结点 难度：中
  * @leetCode url:https://leetcode-cn.com/problems/swap-nodes-in-pairs/
  * @Author: wangzhao
@@ -8,7 +10,7 @@
  * @Version: 1.0.0
  * @Since: 1.8
  **/
-public class LinkedListSwapPairs {
+class LinkedListSwapPairs {
 
     /**
      *思路：

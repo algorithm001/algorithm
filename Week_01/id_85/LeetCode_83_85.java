@@ -1,6 +1,9 @@
+public class LeetCode_83_85 {
+}
+
 /**
  * @Package:
- * @ClassName: Solution
+ * @ClassName: LinkedListDelDup
  * @Description: 删除排序链表中的重复元素
  * @leetcode url :https://leetcode.com/problems/remove-duplicates-from-sorted-list/
  * @Author: wangzhao
@@ -8,7 +11,7 @@
  * @Version: 1.0.0
  * @Since: 1.8
  **/
-public class LinkedListDelDup {
+class LinkedListDelDup {
 
 
     public ListNode deleteDuplicates(ListNode head) {
@@ -103,5 +106,3 @@ public class LinkedListDelDup {
         }
     }
 }
-
-

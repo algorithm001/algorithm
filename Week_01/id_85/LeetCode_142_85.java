@@ -1,8 +1,11 @@
 import java.util.HashMap;
 
+public class LeetCode_142_85 {
+
+}
 /**
  * @Package:
- * @ClassName: LinkedListCycleII
+ * @ClassName: LeetCode_142_85.LinkedListCycleII
  * @Description: 给定一个链表，返回链表开始入环的第一个结点。 如果链表无环，则返回 null 难度：中
  * @leetCode url : https://leetcode.com/problems/linked-list-cycle-ii/
  * @Author: wangzhao
@@ -10,8 +13,7 @@ import java.util.HashMap;
  * @Version: 1.0.0
  * @Since: 1.8
  **/
-public class LinkedListCycleII {
-
+class LinkedListCycleII {
 
     /**
      *
@@ -42,9 +44,6 @@ public class LinkedListCycleII {
         if (head==null){
             return null;
         }
-
-
-
 
         return null;
     }
@@ -83,7 +82,7 @@ public class LinkedListCycleII {
         while (node != null&&resultNode!=null) {
             i++;
             if (node==resultNode){
-              break;
+                break;
             }
             node = node.next;
         }

@@ -1,6 +1,9 @@
+public class LeetCode_21_85 {
+
+}
 /**
  * @Package:
- * @ClassName: LinkedListSortMerge
+ * @ClassName: LeetCode_21_85.LinkedListSortMerge
  * @Description: 有序链表合并为一个新的有序链表
  * @leetcode url :https://leetcode.com/problems/merge-two-sorted-lists
  * @Author: wangzhao
@@ -8,7 +11,7 @@
  * @Version: 1.0.0
  * @Since: 1.8
  **/
-public class LinkedListSortMerge {
+class LinkedListSortMerge {
 
 
     /**

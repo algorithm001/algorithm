@@ -1,6 +1,6 @@
 class Solution {
     
-    private Map<String,String> charMap=new HashMap();
+    private Map<Character,Character> charMap=new HashMap();
     public boolean isValid(String s) {
         
         //1.拆成数组
@@ -18,15 +18,18 @@ class Solution {
             return true;
         }
         initMap(charMap);
-        String[] ary=s.split("");
+     
         Stack stack=new Stack();
-        String stackTopStr;
-        for(String str:ary){
+        char stackTopStr;
+        char str;
+        for(int i=0;i<s.length();i++){
+            str=s.charAt(i);
             //获取栈顶元素  
             if(stack.empty()){
-                stackTopStr="";
+                //设置默认值
+                stackTopStr='#';
             }else{
-                stackTopStr=(String)stack.peek(); 
+                stackTopStr=(char)stack.peek(); 
             }
             //比较栈顶元素是否可消除 
             if(canPop(charMap,stackTopStr,str)){
@@ -43,11 +46,11 @@ class Solution {
     /**
     * 初始化map
     **/
-    private void initMap(Map<String,String> map){
-         map.put("(",")");
-         map.put("{","}");
-         map.put("[","]");
-         map.put("\"","\"");
+    private void initMap(Map<Character,Character> map){
+         map.put('(',')');
+         map.put('{','}');
+         map.put('[',']');
+         map.put('"','"');
     }
     
     /**
@@ -55,11 +58,11 @@ class Solution {
     * stackTopStr 栈顶元素
     * waitInStackStr 即将入栈元素
     **/
-    private boolean canPop(Map<String,String> map,String stackTopStr,String waitInStackStr){
+    private boolean canPop(Map<Character,Character> map,char stackTopStr,char waitInStackStr){
         boolean pop=false;
-        String v=map.get(stackTopStr);
+        Character v=map.get(stackTopStr);
         if(v!=null){
-            pop=v.equals(waitInStackStr);
+            pop=(v==waitInStackStr);
         }
         return pop;
     }

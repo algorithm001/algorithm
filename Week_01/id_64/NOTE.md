@@ -54,7 +54,7 @@
   - remove(val), O(n)
   - has(val), O(n)
   - isEmpty()
-- Trie 字典树, 每个节点都是 map, 跟节点为空
+- Trie 字典树, 每个节点都是 map, 根节点为空
   - add(val)
   - isWord(val)
   - contains(val)

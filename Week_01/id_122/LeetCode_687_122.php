@@ -23,7 +23,7 @@ class TreeNode {
 }
 
 class Solution {
-    private $maxP = 0;
+    private $max = 0;
 
     /**
      * @param TreeNode $root
@@ -34,7 +34,7 @@ class Solution {
             return 0;
         }
         $this->maxP($root, $root->val);
-        return $this->maxP;
+        return $this->max;
     }
 
     function maxP($root, $val) {
@@ -43,7 +43,7 @@ class Solution {
         }
         $left = $this->maxP($root->left, $root->left->val);
         $right = $this->maxP($root->right, $root->right->val);
-        $this->maxP = max($this->maxP, $left + $right);
+        $this->max = max($this->max, $left + $right);
         if ($root->val == $val) {
             return max($left, $right) + 1;
         }

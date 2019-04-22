@@ -1,0 +1,19 @@
+class Solution {
+    public int arrangeCoins(int n) {
+        if(n == 1){
+            return 1;
+        }
+
+        int start = 0, end = n;
+        while(start + 1 < end){
+            int mid = (end + start)>>1;
+            if((long)mid*(mid+1) <= (long)2*n){
+                start = mid;
+            }
+            else{
+                end = mid;
+            }
+        }
+        return start;
+    }
+}

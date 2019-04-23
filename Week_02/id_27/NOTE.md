@@ -3,7 +3,7 @@
 哈希表
 简单：https://leetcode-cn.com/problems/valid-anagram/            --finish
 中等：https://leetcode-cn.com/problems/top-k-frequent-words      --finish
-中等：https://leetcode-cn.com/problems/find-duplicate-file-in-system/
+中等：https://leetcode-cn.com/problems/find-duplicate-file-in-system/    --finish
 困难：https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/
 困难：https://leetcode-cn.com/problems/number-of-atoms/
 

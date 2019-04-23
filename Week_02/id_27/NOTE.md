@@ -20,3 +20,9 @@
 中等：https://leetcode-cn.com/problems/contains-duplicate-iii/
 困难：https://leetcode-cn.com/problems/count-of-range-sum/
 困难：https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/
+
+# 题目203的结题过程
+- 未添加虚拟头结点
+- 添加虚拟头结点
+- 递归解法
+真实的感受到代码一步步的简化过程

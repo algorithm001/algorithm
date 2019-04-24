@@ -15,7 +15,7 @@
 困难：https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/
 
 二叉搜索树
-简单：https://leetcode-cn.com/problems/minimum-distance-between-bst-nodes/
+简单：https://leetcode-cn.com/problems/minimum-distance-between-bst-nodes/     --finish
 中等：https://leetcode-cn.com/problems/range-sum-of-bst/
 中等：https://leetcode-cn.com/problems/contains-duplicate-iii/
 困难：https://leetcode-cn.com/problems/count-of-range-sum/

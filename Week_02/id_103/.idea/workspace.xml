@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ee45656-12a0-440c-9ee9-027b686d29d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/id_103.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HashTable/P242.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HashTable/P671.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HashTable/P692.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HashTable/TreeNode.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NOTE.md" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +15,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HashTable/P242.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="47" column="1" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+            <state relative-caret-position="181">
+              <caret line="33" selection-start-line="33" selection-end-line="47" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -31,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HashTable/P671.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="40" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -46,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HashTable/P692.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+            <state relative-caret-position="466">
+              <caret line="37" column="5" lean-forward="true" selection-end-line="40" />
               <folding>
                 <element signature="e#19#37#0" expanded="true" />
               </folding>
@@ -58,7 +51,26 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/NOTE.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="90">
+                <caret line="6" column="57" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
@@ -71,6 +83,7 @@
         <option value="$PROJECT_DIR$/HashTable/P671.go" />
         <option value="$PROJECT_DIR$/HashTable/TreeNode.go" />
         <option value="$PROJECT_DIR$/HashTable/P692.go" />
+        <option value="$PROJECT_DIR$/NOTE.md" />
       </list>
     </option>
   </component>
@@ -94,6 +107,11 @@
             <path>
               <item name="id_103" type="b2602c69:ProjectViewProjectNode" />
               <item name="id_103" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="id_103" type="b2602c69:ProjectViewProjectNode" />
+              <item name="id_103" type="462c0819:PsiDirectoryNode" />
+              <item name="HashTable" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -131,6 +149,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="26" y="44" width="1680" height="947" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20695971" />
@@ -157,20 +176,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HashTable/P242.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="1" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HashTable/P671.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HashTable/TreeNode.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -178,13 +183,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HashTable/P242.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="33" selection-start-line="33" selection-end-line="47" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HashTable/P671.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="40" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HashTable/P692.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+        <state relative-caret-position="466">
+          <caret line="37" column="5" lean-forward="true" selection-end-line="40" />
           <folding>
             <element signature="e#19#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NOTE.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="90">
+            <caret line="6" column="57" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,36 @@
+class Solution {
+
+    /**
+     * @param String $s
+     * @param String $t
+     * @return Boolean
+     */
+    function isAnagram($s, $t) {
+        $ttemp = $t;
+        $sLen = strlen($s);
+        $tLen = strlen($t);
+        if($sLen != $tLen){
+            return false;
+        }
+        $sbool = $tbool = true;
+        for($i=0;$i<$sLen;$i++){
+            if(stripos($t, $s[$i]) === false){
+                $sbool = false;
+                break;
+            } 
+            $t = preg_replace("/$s[$i]/", '', $t, 1);
+        }
+        for($j=0;$j<$tLen;$j++){ 
+            if(stripos($s, $ttemp[$j]) === false){
+                $tbool = false;
+                break;
+            }
+            $s = preg_replace("/$ttemp[$j]/", '', $s, 1);
+        }
+        if($sbool && $tbool){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}

@@ -46,4 +46,5 @@ func Test_minDiffInBST(t *testing.T) {
 			}
 		})
 	}
+	println()
 }

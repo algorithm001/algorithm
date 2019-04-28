@@ -25,8 +25,16 @@ Note:
 
 The size of the BST will be between 2 and 100.
 The BST is always valid, each node's value is an integer, and each node's value is different.
-
 */
+
+/*
+BST: 二叉搜索树特点
+1.若任意节点的左子树不空，则左子树上所有结点的值均小于它的根结点的值；
+2.任意节点的右子树不空，则右子树上所有结点的值均大于它的根结点的值；
+3.任意节点的左、右子树也分别为二叉查找树；
+4.没有键值相等的节点。(这一条似乎没有必要?)
+*/
+
 func minDiffInBST(root *TreeNode) int {
 	if root == nil {
 		return 0

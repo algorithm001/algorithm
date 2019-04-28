@@ -1,11 +1,5 @@
 package id_123
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
 func findSecondMinimumValue(root *TreeNode) int {
 	return findBiggerThanValue(root, root.Val)
 }

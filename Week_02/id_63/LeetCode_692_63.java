@@ -62,14 +62,8 @@ class Solution {
     Collections.sort(wordFrequents, new Comparator<WordFrequent>() {
       @Override
       public int compare(WordFrequent o1, WordFrequent o2) {
-        return o1.word.compareTo(o2.word);
-      }
-    });
-    Collections.sort(wordFrequents, new Comparator<WordFrequent>() {
-      @Override
-      public int compare(WordFrequent o1, WordFrequent o2) {
         if (o1.frequent == o2.frequent) {
-          return 0;
+          return o1.word.compareTo(o2.word);
         } else if (o1.frequent > o2.frequent) {
           return -1;
         } else {

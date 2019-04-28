@@ -31,9 +31,6 @@ https://leetcode-cn.com/problems/top-k-frequent-words/
 
     尝试以 O(n log k) 时间复杂度和 O(n) 空间复杂度解决。
 */
-/*
-时间不够，来不及用堆或者优先级队列。
-*/
 class Solution {
   static class WordFrequent {
     String word;
@@ -56,24 +53,26 @@ class Solution {
       map.put(words[i], count);
     }
     java.util.List<WordFrequent> wordFrequents = new java.util.ArrayList<>();
+      PriorityQueue<WordFrequent> queue = new PriorityQueue<WordFrequent>(k, new Comparator<WordFrequent>() {
+          @Override
+          public int compare(WordFrequent o1, WordFrequent o2) {
+            if (o1.frequent == o2.frequent) {
+              return o1.word.compareTo(o2.word);
+            } else if (o1.frequent > o2.frequent) {
+              return -1;
+            } else {
+              return 1;
+            }
+          }
+        });
     for (String word : map.keySet()) {
-        wordFrequents.add(new WordFrequent(word, map.get(word)));
+        queue.add(new WordFrequent(word, map.get(word)));
     }
-    Collections.sort(wordFrequents, new Comparator<WordFrequent>() {
-      @Override
-      public int compare(WordFrequent o1, WordFrequent o2) {
-        if (o1.frequent == o2.frequent) {
-          return o1.word.compareTo(o2.word);
-        } else if (o1.frequent > o2.frequent) {
-          return -1;
-        } else {
-          return 1;
-        }
-      }
-    });
     java.util.List<String> result = new java.util.ArrayList<>(k);
-    for (int i = 0; i < k && i < map.size(); i++) {
-      result.add(wordFrequents.get(i).word);
+    int i = 0;
+    while (queue.size() != 0 && i < k) {
+        result.add(queue.remove().word);
+        i++;
     }
     return result;
   }

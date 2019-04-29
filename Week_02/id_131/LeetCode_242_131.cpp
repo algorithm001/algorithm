@@ -21,4 +21,27 @@ public:
         }
         return true;        
     }
+	
+	bool isAnagramB(string s, string t) 
+	{
+        if(s.size() != t.size()) {
+            return false;
+        }
+
+        // 假设字符串只包含小写字母
+		int alphabet[26] = {0};
+
+        // 统计字符串s中小写字母出现的次数
+        for(int indexStr = 0; indexStr < s.size(); ++indexStr){
+            alphabet[alphabet[indexStr]-'a']++;
+        }
+
+        // 长度固定，所有字母出现的次数必须都相同
+        for(int indexStr = 0; indexStr < t.size(); ++indexStr){
+            if(--alphabet[alphabet[indexStr] - 'a'] < 0)
+                return false;
+        }
+
+        return true;
+	}
 };

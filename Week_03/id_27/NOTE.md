@@ -1,7 +1,7 @@
 # 学习笔记
 第三周题目
 图
-简单：https://leetcode-cn.com/problems/find-the-town-judge/
+简单：https://leetcode-cn.com/problems/find-the-town-judge/         --finish
 中等：https://leetcode-cn.com/problems/course-schedule-ii
 困难：https://leetcode-cn.com/problems/minimize-malware-spread-ii/
 

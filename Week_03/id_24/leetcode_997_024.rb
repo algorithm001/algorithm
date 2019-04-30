@@ -1,3 +1,9 @@
+#解题思路：看到这类问题首先想到了领接表和逆邻接表存储信任关系，根据条件查找是否满足给定的题目条件。
+# 处理过程比较简单，实际代码完成过程中还是出现了两个问题，
+# 1.忽略了边界条件，信任数组为空且N=1的情况； 
+# 2.忘记了反向查找，没有去逆邻接表中查找法官候选人是否信任其他人
+
+
 # @param {Integer} n
 # @param {Integer[][]} trust
 # @return {Integer}
@@ -25,9 +31,7 @@ def find_judge(n, trust)
             judge << key
         end
     end
-    #puts judge, trust_hash
     judge.delete_if{|a| trusted_hash.has_key? a}
-   # puts judge,1
     if judge.length == 1
         return judge.first
     end

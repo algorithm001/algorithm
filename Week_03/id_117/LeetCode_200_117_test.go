@@ -33,7 +33,7 @@ func Test_numIslands(t *testing.T) {
 		ins := tt["ins"].([][]byte)
 		outs := tt["outs"].(int)
 		t.Run(name, func(t *testing.T) {
-			got := numIslands(ins)
+			got := numIslands2(ins)
 			isEq := got == outs
 			t.Log("got: ", got)
 			if !isEq {

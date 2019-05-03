@@ -81,3 +81,70 @@ func resetIslands(grid [][]byte) {
 }
 
 // 思路二： 并查集
+// golang中byte和int转换
+func numIslands2(grid [][]byte) int {
+	rowLen := len(grid)
+	columnLen := len(grid[0])
+	eles := initialEle(grid)
+
+	// 从上到下，从左到右开始比较元素
+	for i := 0; i < rowLen; i++ {
+		for j := 0; j < columnLen; j++ {
+			if grid[i][j] == 1 {
+				// 当前位置
+				curEleIdx := i*columnLen + j
+				// 比较当前元素和右边元素
+				if j < columnLen-1 && grid[i][j+1] == 1 {
+					nextEleIdx := i*columnLen + (j + 1)
+					joinEle(eles, curEleIdx, nextEleIdx)
+				}
+				// 比较当前元素和下面元素
+				if i < rowLen-1 && grid[i+1][j] == 1 {
+					nextEleIdx := (i+1)*columnLen + j
+					joinEle(eles, curEleIdx, nextEleIdx)
+				}
+			}
+		}
+	}
+	return countEle(eles)
+}
+
+func initialEle(grid [][]byte) *[]int {
+	rowLen := len(grid)
+	columnLen := len(grid[0])
+	result := []int{}
+	for i := 0; i < rowLen; i++ {
+		for j := 0; j < columnLen; j++ {
+			curIdx := i*columnLen + j
+			if grid[i][j] == 0 {
+				result = append(result, -1)
+			} else {
+				result = append(result, curIdx)
+			}
+		}
+	}
+	return &result
+}
+
+func joinEle(eles *[]int, cur, next int) {
+	if (*eles)[cur] != (*eles)[next] {
+		(*eles)[next] = (*eles)[cur]
+	}
+}
+
+func countEle(eles *[]int) int {
+	elesLen := len(*eles)
+	mps := make(map[int]int)
+	for i := 0; i < elesLen; i++ {
+		ele := (*eles)[i]
+		if ele == -1 {
+			continue
+		}
+		if _, ok := mps[ele]; ok {
+			continue
+		} else {
+			mps[ele] = 1
+		}
+	}
+	return len(mps)
+}

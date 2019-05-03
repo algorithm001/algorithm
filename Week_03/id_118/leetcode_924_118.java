@@ -3,6 +3,7 @@
 
 // 无向图的连通性问题。
 // graph是一个n*n数组（这例子举的真是糟糕，我开始还以为是有向带权图呢...）
+// 先用Union-Find分组，再找含有病毒顶点的组内元素最多的组中索引最小的病毒顶点。
 
 class Solution {
     public int minMalwareSpread(int[][] graph, int[] initial) {

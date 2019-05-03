@@ -36,8 +36,11 @@ You may assume that there are no duplicate edges in the input prerequisites.
 // 思路2：寻找是否存在环，该题假设数字的课必须依赖数字小的课
 func findOrder(numCourses int, prerequisites [][]int) []int {
 
+	// 最终返回数组
 	queue := make([]int, 0, numCourses)
+	// 到达节点数量， 比如说:[1,0], [1,2]，1为达到节点，1的inDegree为2
 	inDegree := make([]int, numCourses, numCourses)
+	// 出发节点列表，比如说:[1,0], [2,0], [1,2]，graph[0]=[1,2], graph[2]=1
 	graph := make(map[int][]int)
 
 	for _, edge := range prerequisites {
@@ -54,7 +57,7 @@ func findOrder(numCourses int, prerequisites [][]int) []int {
 	}
 
 	for i := 0; i < numCourses; i++ {
-		// no course with no prereq but not all courses are processed yet. must have a cycle in the graph.
+		// 没有独立不受依赖的节点，或者队列中数量不足
 		if i >= len(queue) {
 			return []int{}
 		}

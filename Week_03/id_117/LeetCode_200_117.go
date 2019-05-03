@@ -29,6 +29,9 @@ Output: 3
 
 // 思路一： DFS
 func numIslands(grid [][]byte) int {
+	if grid == nil || len(grid) == 0 || len(grid[0]) == 0 {
+		return 0
+	}
 	fn := "numIslands"
 	fmt.Println(fn, grid)
 	rowLen := len(grid)
@@ -36,7 +39,7 @@ func numIslands(grid [][]byte) int {
 	count := 0
 	for m := 0; m < rowLen; m++ {
 		for n := 0; n < columnLen; n++ {
-			if grid[m][n] == 1 {
+			if grid[m][n] == '1' {
 				count++
 				numIslandsCell(grid, m, n)
 			}
@@ -50,7 +53,7 @@ func numIslands(grid [][]byte) int {
 func numIslandsCell(grid [][]byte, i, j int) {
 	rowLen := len(grid)
 	columnLen := len(grid[0])
-	if grid[i][j] != 1 {
+	if grid[i][j] != '1' {
 		return
 	}
 	grid[i][j] = 'M'
@@ -74,7 +77,7 @@ func resetIslands(grid [][]byte) {
 	for i := 0; i < rowLen; i++ {
 		for j := 0; j < columnLen; j++ {
 			if grid[i][j] == 'M' {
-				grid[i][j] = '1' - 48
+				grid[i][j] = '0'
 			}
 		}
 	}
@@ -90,16 +93,16 @@ func numIslands2(grid [][]byte) int {
 	// 从上到下，从左到右开始比较元素
 	for i := 0; i < rowLen; i++ {
 		for j := 0; j < columnLen; j++ {
-			if grid[i][j] == 1 {
+			if grid[i][j] == '1' {
 				// 当前位置
 				curEleIdx := i*columnLen + j
 				// 比较当前元素和右边元素
-				if j < columnLen-1 && grid[i][j+1] == 1 {
+				if j < columnLen-1 && grid[i][j+1] == '1' {
 					nextEleIdx := i*columnLen + (j + 1)
 					joinEle(eles, curEleIdx, nextEleIdx)
 				}
 				// 比较当前元素和下面元素
-				if i < rowLen-1 && grid[i+1][j] == 1 {
+				if i < rowLen-1 && grid[i+1][j] == '1' {
 					nextEleIdx := (i+1)*columnLen + j
 					joinEle(eles, curEleIdx, nextEleIdx)
 				}
@@ -112,17 +115,18 @@ func numIslands2(grid [][]byte) int {
 func initialEle(grid [][]byte) *[]int {
 	rowLen := len(grid)
 	columnLen := len(grid[0])
-	result := []int{}
+	result := make([]int, rowLen*columnLen)
 	for i := 0; i < rowLen; i++ {
 		for j := 0; j < columnLen; j++ {
 			curIdx := i*columnLen + j
-			if grid[i][j] == 0 {
-				result = append(result, -1)
+			if grid[i][j] == '0' {
+				result[curIdx] = -1
 			} else {
-				result = append(result, curIdx)
+				result[curIdx] = curIdx
 			}
 		}
 	}
+	fmt.Println(result)
 	return &result
 }
 

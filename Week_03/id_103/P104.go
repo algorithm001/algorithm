@@ -18,3 +18,8 @@ func maxDepth(root *TreeNode) int {
 	}
 	return right
 }
+
+func main() {
+	vr := TreeNode{}
+	maxDepth(&vr)
+}

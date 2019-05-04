@@ -45,7 +45,6 @@ func numIslands(grid [][]byte) int {
 			}
 		}
 	}
-	// 江湖句排序输出
 	resetIslands(grid)
 	return count
 }
@@ -89,7 +88,6 @@ func numIslands2(grid [][]byte) int {
 	rowLen := len(grid)
 	columnLen := len(grid[0])
 	eles := initialEle(grid)
-
 	// 从上到下，从左到右开始比较元素
 	for i := 0; i < rowLen; i++ {
 		for j := 0; j < columnLen; j++ {

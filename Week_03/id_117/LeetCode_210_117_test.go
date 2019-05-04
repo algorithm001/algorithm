@@ -1,13 +1,8 @@
 package solution
 
 import (
-	"reflect"
 	"testing"
 )
-
-func StringSliceReflectEqual(a, b []int) bool {
-	return reflect.DeepEqual(a, b)
-}
 
 func Test_findOrder(t *testing.T) {
 	testData := []map[string]interface{}{

@@ -31,12 +31,7 @@ KthLargest* kthLargestCreate(int k, int* nums, int numsSize) {
     int loop;
 
     for(loop = 0; loop < numsSize; loop++){
-        if(loop < k){
-            KthLargestInsert(obj, nums[loop]);
-        }else
-        {
-            kthLargestAdd(obj, nums[loop]);
-        }
+        kthLargestAdd(obj, nums[loop]);
     }
 
     return obj;

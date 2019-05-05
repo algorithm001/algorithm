@@ -17,6 +17,6 @@
 
 ## 注意事项
 
-1. **代码文件命名规则：**`LeetCode_题目序号_学号`，比如学号为 `0` 的学员完成 [LeetCode 的第 2 题](https://leetcode.com/problems/add-two-numbers/description/) 后，请将代码文件名保存为  `LeetCode_2_0.py` (假设你使用的是 Python 语言)。
+1. **代码文件命名规则：**`LeetCode_题目序号_学号`，比如学号为 `0` 的学员完成 [LeetCode_33_108 的第 2 题](https://leetcode.com/problems/add-two-numbers/description/) 后，请将代码文件名保存为  `LeetCode_2_0.py` (假设你使用的是 Python 语言)。
 2. **作业公布地址：** 我们会在置顶的 issue 中公布当周的算法练习题以及其他注意事项。
 3. 如果对 Git 和 GitHub 不太了解，请参考 [Git 官方文档](https://git-scm.com/book/zh/v2) 或者极客时间的[《玩转 Git 三剑客》](https://time.geekbang.org/course/intro/145)视频课程。

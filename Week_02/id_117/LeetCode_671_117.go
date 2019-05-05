@@ -31,18 +31,6 @@ Output: -1
 Explanation: The smallest value is 2, but there isn't any second smallest value.
 */
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
-func createNode(num int) *TreeNode {
-	return &TreeNode{
-		Val: num,
-	}
-}
-
 func compare(left, right int) int {
 	if left == -1 {
 		return right
@@ -79,7 +67,7 @@ func findSecondMinimumValue(root *TreeNode) int {
 	if root == nil {
 		return -1
 	}
-	if root.Right != nil && root.Left == nil {
+	if root.Right == nil && root.Left == nil {
 		return -1
 	}
 	left := findBigerOne(root.Left, root.Val)

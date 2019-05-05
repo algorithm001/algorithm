@@ -158,31 +158,35 @@ func findMinHeightTrees3(n int, edges [][]int) []int {
 		adjacentMap[a][b] = true
 		adjacentMap[b][a] = true
 	}
-	fmt.Println("adjacentMap ====>", adjacentMap)
-
-	queue := []int{}
+	queue := []int{} // 保存最外层叶子节点
 	for i := 0; i < n; i++ {
 		if len(adjacentMap[i]) == 1 {
-			// 保存只有一个出度的节点
 			queue = append(queue, i)
 		}
 	}
 
 	for len(queue) > 0 {
+		// 如果只剩余最后两个,则两个都是正确值,直接返回
 		if len(queue) == 2 {
 			a, b := queue[0], queue[1]
 			if adjacentMap[a][b] && adjacentMap[b][a] {
+				// 两个节点的返回
+				fmt.Println("two ends")
 				return queue
 			}
 		}
 
 		next := []int{}
+		// 每一次循环都是删除叶子节点
 		for _, node := range queue {
+			// neighbor为叶子节点关联的直接节点
 			for neighbor := range adjacentMap[node] {
+				// 直接节点没有其他的关联节点
 				if len(adjacentMap[neighbor]) == 1 {
+					// 一个节点的返回
+					fmt.Println("one ends")
 					return []int{neighbor}
 				}
-
 				delete(adjacentMap[neighbor], node)
 				delete(adjacentMap[node], neighbor)
 				if len(adjacentMap[neighbor]) == 1 {
@@ -190,9 +194,7 @@ func findMinHeightTrees3(n int, edges [][]int) []int {
 				}
 			}
 		}
-
 		queue = next
 	}
-
 	return []int{}
 }

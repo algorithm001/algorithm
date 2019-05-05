@@ -15,7 +15,7 @@ func Test_findMinHeightTrees(t *testing.T) {
 		map[string]interface{}{
 			"name": "test2",
 			"num":  6,
-			"ins":  [][]int{{0, 3}, {1, 3}, {2, 3}, {4, 3}, {5, 4}},
+			"ins":  [][]int{{4, 3}, {0, 3}, {1, 3}, {2, 3}, {5, 4}},
 			"outs": []int{3, 4},
 		},
 	}

@@ -33,7 +33,7 @@ p and q are different and both values will exist in the binary tree.
 
 // 方法二思路
 func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
-	// 递归介绍条件
+	// 递归终止条件
 	if root == nil || root.Val == p.Val || root.Val == q.Val {
 		return root
 	}

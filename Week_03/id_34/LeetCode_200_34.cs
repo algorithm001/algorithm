@@ -1,4 +1,5 @@
-        public int NumIslands(char[][] grid)
+public class Solution {
+       public int NumIslands(char[][] grid)
         {
             int islandCount = 0;
             for (int y = 0; y < grid.Length; y++)
@@ -36,3 +37,4 @@
                 return;
             }
         }
+}

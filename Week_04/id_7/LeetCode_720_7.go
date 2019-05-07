@@ -18,12 +18,21 @@ type find_result struct {
 func (self *tries_node) addString(c string) {
 	last := self
 	for _, b := range c {
+		_b := byte(b)
+
 		if last.children == nil {
 			last.children = make(map[byte]*tries_node)
 		}
 
-		n := &tries_node{c: byte(b), children: nil}
-		last.children[byte(b)] = n
+		var n *tries_node
+		var ok bool
+
+		if n, ok = last.children[_b]; ok {
+			last.children[_b].gocount += 1
+		} else {
+			n = &tries_node{c: byte(b), children: nil, gocount: 1}
+			last.children[_b] = n
+		}
 		last = n
 	}
 }
@@ -39,7 +48,7 @@ func longestWord(words []string) string {
 		root_tree.addString(v)
 	}
 
-	goon := true
+	// 用bfs 的方法寻找最大的结果
 
 	// 处理运算结果
 	if len(result) == 0 {

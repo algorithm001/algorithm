@@ -66,7 +66,7 @@ public:
 class Solution {
 public:
 	string resStr = "";//存储结果
-	TrieNode *trieRoot;//构建的单词后缀树
+	TrieNode *trieRoot;//构建的单词前缀树
 	string longestWord(vector<string>& words) {
 		trieRoot = new TrieNode();
 		for (auto &word : words) {

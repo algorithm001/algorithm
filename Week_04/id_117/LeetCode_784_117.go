@@ -24,6 +24,7 @@ S will be a string with length between 1 and 12.
 S will consist only of letters or digits.
 */
 
+// 方法一,必须要先转换大小写
 func letterCasePermutation(S string) []string {
 	// 先转化为小写
 	S = strings.ToLower(S)
@@ -45,5 +46,28 @@ func permute(s string, m map[string]string) {
 			temp = strings.TrimSpace(temp)
 			permute(temp, m)
 		}
+	}
+}
+
+// 方法二,节省了转化大小写的时间,直接分别递归
+func letterCasePermutation2(s string) []string {
+	ans := make([]string, 0)
+	formatString(s, 0, "", &ans)
+	return ans
+}
+
+func formatString(s string, i int, prevString string, ans *[]string) {
+	if i >= len(s) {
+		*ans = append(*ans, prevString)
+		return
+	}
+	if s[i] >= 48 && s[i] <= 57 {
+		formatString(s, i+1, prevString+string(s[i]), ans)
+	} else if s[i] >= 65 && s[i] <= 90 {
+		formatString(s, i+1, prevString+string(s[i]+byte(32)), ans)
+		formatString(s, i+1, prevString+string(s[i]), ans)
+	} else {
+		formatString(s, i+1, prevString+string(s[i]-byte(32)), ans)
+		formatString(s, i+1, prevString+string(s[i]), ans)
 	}
 }

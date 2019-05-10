@@ -39,8 +39,8 @@ func diffWaysToCompute(input string) []int {
 		if input[i] == '-' || input[i] == '+' || input[i] == '*' {
 			parts1 := input[0:i]
 			parts2 := input[i+1:]
-			parts1Res := diffWaysToCompute(parts1)
-			parts2Res := diffWaysToCompute(parts2)
+			parts1Res := diffWaysToCompute(parts1) // [2, 33]结果
+			parts2Res := diffWaysToCompute(parts2) // [2, 1]结果
 			for _, m := range parts1Res {
 				for _, n := range parts2Res {
 					c := 0

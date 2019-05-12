@@ -1,0 +1,29 @@
+class Solution {
+public:
+    string longestWord(vector<string>& words) {
+        
+         sort(words.begin(), words.end(), [](string &x, string &y)->bool{return x.length()<y.length() ||(x.length()==y.length() && x<y);});
+        unordered_set<string> stringSet;
+        string res = "";
+        for(int i=0; i<words.size(); i++){
+            
+            
+            if(words[i].length()==1){
+                
+                
+                if(words[i].length()>res.length())
+                    res = words[i];
+                stringSet.insert(words[i]);
+                
+            }else{
+                if(stringSet.find(words[i].substr(0, words[i].length()-1))!=stringSet.end()){
+                    stringSet.insert(words[i]);
+                    if(words[i].length()>res.length())
+                        res = words[i];
+                }
+            }
+        }
+        return res;
+        
+    }
+};

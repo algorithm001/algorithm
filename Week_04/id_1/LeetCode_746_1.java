@@ -31,3 +31,6 @@ class Solution {
           return Math.min(cost[cost.length-1], cost[cost.length-2]);
       }  
   }
+
+
+  

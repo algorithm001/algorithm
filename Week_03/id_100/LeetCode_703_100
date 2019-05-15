@@ -1,0 +1,53 @@
+public class KthLargest {
+    private int k;
+    private int[] nums;
+
+    public KthLargest(int k, int[] nums) {
+        this.nums = new int[k + 1];
+        this.k = k;
+        this.count = 0;
+        for (int i = 0; i < nums.length; i++) {
+            this.add(nums[i]);
+        }
+    }
+    
+    private int count;
+
+    public int add(int val) {
+        if (count == k && val < nums[1]) {
+            return nums[1];
+        }
+
+        if (count >= k) {
+            nums[1] = val;
+            int i = 1;
+            while (2 * i <= count) {
+                int j = 2;
+                if (j < count && nums[j] > nums[j + 1]) j++;
+                if (nums[1] <= nums[j]) break;
+                swap(nums, i, j);
+                i = j;
+            }
+        } else {
+            nums[++count] = val;
+            while (count > 1 && nums[count] < nums[count / 2]) {
+                swap(nums, count, count / 2);
+                count = count / 2;
+            }
+        }
+
+        return nums[1];
+    }
+
+    private void swap(int[] a, int i, int j) {
+        int origin = a[j];
+        a[j] = a[i];
+        a[i] = origin;
+    }
+}
+
+/**
+ * Your KthLargest object will be instantiated and called as such:
+ * KthLargest obj = new KthLargest(k, nums);
+ * int param_1 = obj.add(val);
+ */

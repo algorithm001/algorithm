@@ -5,6 +5,36 @@ import java.util.Queue;
 
 public class LeetCode_671_13 {
 
+
+    public int findSecondMinimumValue(TreeNode root) {
+        return _dfs(root, root.val);
+//        return _bfs(root);
+    }
+
+    /**
+     * 根据题目描述：如果一个节点有两个子节点的话，那么这个节点的值不大于它的子节点的值。
+     * 可以得知，树的根节点是最小值
+     * 一个节点如果有两个孩子节点，那么该节点是这个树的最小值
+     * 题目需求就变成：取出第一个比根节点大的节点
+     *
+     * @param root 根节点
+     * @return 第二小值
+     */
+    private int _dfs(TreeNode root, int rootVal) {
+        if (root == null) return -1;
+
+        if (root.val > rootVal) return root.val;
+
+        int l = _dfs(root.left, rootVal);
+        int r = _dfs(root.right, rootVal);
+
+        if (l > 0 && r > 0) {
+            return Math.min(l,r);
+        }
+
+        return Math.max(l,r);
+    }
+
     /**
      * 如果想知道第二小的数字，则需要知道每一个节点的数据，所以需要遍历
      * 本方法使用BFS的方式遍历
@@ -21,7 +51,7 @@ public class LeetCode_671_13 {
      * @param root 根节点
      * @return 第二小的值
      */
-    public int findSecondMinimumValue(TreeNode root) {
+    private int _bfs(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
 
         queue.add(root);

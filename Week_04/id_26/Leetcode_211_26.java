@@ -8,101 +8,96 @@ package com.fanlu.leetcode.trietree;
 // Tips   :
 
 public class WordDictionary {
-    private Trie trie;
+    TrieNode root;
 
     /**
      * Initialize your data structure here.
      */
     public WordDictionary() {
-        trie = new Trie();
+        root = new TrieNode();
     }
 
     /**
      * Adds a word into the data structure.
      */
     public void addWord(String word) {
-        trie.insert(word);
+        TrieNode node = root;
+        for (char c : word.toCharArray()) {
+            int index = c - 'a';
+            if (node.children[index] == null) {
+                node.children[index] = new TrieNode();
+            }
+            node = node.children[index];
+        }
+        node.isEndOfAWord = true;
     }
 
     /**
      * Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter.
      */
+    // 100.00%  76.32% (54.9)
     public boolean search(String word) {
-        return trie.search(word);
+        return search(root, word, 0);
     }
 
-    private class Trie {
-        private class Node {
-            private boolean isWordEnd;
-            private Node[] next;
-
-            public Node() {
-                this(false);
-            }
-
-            ;
-
-            public Node(boolean isWordEnd) {
-                this.isWordEnd = isWordEnd;
-                this.next = new Node[26];
-            }
+    // compare each node's children with the char at the given index of the word incrementally
+    public boolean search(TrieNode node, String word, int index) {
+        // if index is already longer than max index (length-1)
+        // then check if the node is the end of an work, there's no need to check its children
+        if (index == word.length()) {
+            return node.isEndOfAWord;
         }
 
-        private Node root;
+        char ch = word.charAt(index);
+        index++;
 
-        /**
-         * Initialize your data structure here.
-         */
-        public Trie() {
-            root = new Node();
-        }
-
-        /**
-         * Inserts a word into the trie.
-         */
-        public void insert(String word) {
-            int wordLen = word.length();
-            Node cur = root;
-            for (int i = 0; i < wordLen; ++i) {
-                char ch = word.charAt(i);
-                if (cur.next[ch - 'a'] == null)
-                    cur.next[ch - 'a'] = new Node();
-                cur = cur.next[ch - 'a'];
-            }
-
-            if (!cur.isWordEnd) {
-                cur.isWordEnd = true;
-            }
-        }
-
-        /**
-         * Returns if the word is in the trie.
-         */
-        public boolean search(String word) {
-            return search(root, word, 0);
-        }
-
-        private boolean search(Node node, String word, int index) {
-            if (index == word.length()) {
-                return node.isWordEnd;
-            }
-
-            char ch = word.charAt(index);
-            index += 1;
-            if (ch == '.') {
-                for (int i = 0; i < 26; ++i) {
-                    if (node.next[i] == null) continue;
-                    boolean result = search(node.next[i], word, index);
-                    if (result == true) return true;
+        if (ch == '.') {
+            for (TrieNode child : node.children) {
+                if (child != null) {
+                    // if this child works then return true
+                    if (search(child, word, index)) {
+                        return true;
+                    }
                 }
-                return false;
+            }
+            // no child's path works.
+            return false;
+        } else {
+            if (node.children[ch - 'a'] != null) {
+                return search(node.children[ch - 'a'], word, index);
             } else {
-                // current character matched ?
-                boolean curIs = node.next[ch - 'a'] != null;
-                return curIs ? search(node.next[ch - 'a'], word, index) : false;
+                return false;
             }
         }
     }
 
+    class TrieNode {
+        public TrieNode[] children = new TrieNode[26];
+        public boolean isEndOfAWord = false;
 
+    }
+
+    public static void main(String[] args) {
+        WordDictionary obj = new WordDictionary();
+//        obj.addWord("at");
+        obj.addWord("and");
+//        obj.addWord("an");
+        obj.addWord("add");
+//        obj.addWord("a");
+        System.out.println(obj.search(".ad"));
+        System.out.println(obj.search("a.d"));
+        System.out.println(obj.search("b."));
+        System.out.println(obj.search("...."));
+        System.out.println(obj.search(".."));
+        System.out.println(obj.search("a.d."));
+        System.out.println(obj.search(".ad"));
+    }
 }
+
+
+/**
+ * Your WordDictionary object will be instantiated and called as such:
+ * WordDictionary obj = new WordDictionary();
+ * obj.addWord(word);
+ * boolean param_2 = obj.search(word);
+ */

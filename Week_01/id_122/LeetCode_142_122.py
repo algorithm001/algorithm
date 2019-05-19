@@ -23,4 +23,4 @@ class Solution(object):
                     p1 = p1.next
                     p2 = p2.next
                 return p1
-        return 
+        return

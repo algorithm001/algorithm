@@ -1,6 +1,6 @@
 # 学习笔记
 
-[最小花费爬楼问题]（https://leetcode-cn.com/problems/min-cost-climbing-stairs/submissions)
+[最小花费爬楼问题](https://leetcode-cn.com/problems/min-cost-climbing-stairs/submissions)
 
 该问题属于简单问题，处理难点在于理解题目，找出递推公式，首先题目的表述会给我们理解题目造成一定的误解，数组给的是每一层消耗的体力而不是
 每一步的花费，我们需要自己计算到达该楼层花费的总体力，然后每一步的选择有两种，走一步还是走两步，到达该层的最小花费就是到达前一层和前二层花费的最小值，由此我们得出递推公式 f(n) = min(f(n-1)+cost(n-1), f(n-2)+cost(n-2)),然后就是代码实现，需要注意的是边界条件。
